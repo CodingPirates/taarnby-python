@@ -56,7 +56,7 @@ afsnit_optilfrankenstein = Afsnit(
 
 
 
-# Lav historien
+#  Sæt historien sammen ved at tilføje alle afsnit til historieobjektet
 minhistorie = Historie()
 minhistorie.tilfoej_afsnit("indledning",afsnit_indledning)
 minhistorie.tilfoej_afsnit("ud_på_gaden",afsnit_tilbagetilgaden)
@@ -64,7 +64,11 @@ minhistorie.tilfoej_afsnit("bank_på",afsnit_bankpaadoeren)
 minhistorie.tilfoej_afsnit("spørg_igor",afsnit_igorhjaelp)
 minhistorie.tilfoej_afsnit("spørg_efter_frankenstein",afsnit_optilfrankenstein)
 
+# Vi skal vælge indledningen så vi ved hvor vi skal starte
 minhistorie.vaelg_afsnit("indledning")
+# Vi skal også se efter om historien er slut.  I første omgang kan vi regne med at det er den ikke
 er_det_slut = False
+# Vi fortsætter mens historien ikke er slut
 while not(er_det_slut):
+    # Vi kalder funktionen "Skriv det valgte afsnit", som returnerer True eller False afhængig af om historien er slut
     er_det_slut = minhistorie.skriv_afsnit()
